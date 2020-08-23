@@ -1,11 +1,13 @@
 package model.cell
 
-const val MINE = "MINE"
-const val NOT_MINE = "NOT_MINE"
+const val MINE_SYMBOL = "*"
+const val NOT_MINE_SYMBOL = "C"
 
-data class MineStatus(val isMine: Boolean) {
+enum class MineStatus(private val status: String, private val symbol: String) {
+    MINE("MINE", MINE_SYMBOL),
+    NOT_MINE("NOT_MINE", NOT_MINE_SYMBOL);
+
     override fun toString(): String {
-        if (isMine) return "*"
-        return "C"
+        return "$symbol"
     }
 }

@@ -15,7 +15,7 @@ class Map(val x: Int, val y: Int, val mine: Int) {
     private fun createDefaultMap(width: Int, height: Int): MutableList<Cell> {
         return (0 until width).flatMap { x ->
             (0 until height).map { y ->
-                Cell(MineStatus(false), Position(x, y))
+                Cell(MineStatus.NOT_MINE, Position(x, y))
             }
         }.toMutableList()
     }
